@@ -1,0 +1,2190 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "mount_file_id": "1WX-J_TG9t4yYw1XeRsauvgWtfgDgjDpC",
+      "authorship_tag": "ABX9TyM0111TfvvuLjg91QAxxjrI",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Deewhy254/Introduction-to-python/blob/main/Health%20care%20analysis\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 490
+        },
+        "id": "l9nIlYIl-Wbm",
+        "outputId": "ce2f0043-1f6d-4114-f35e-85d4cc675415"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "Interrupted by user",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3573/4077644116.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mschool\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Enter the name of your school: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;32mif\u001b[0m \u001b[0mschool\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m\"OAU\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m     \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mschool\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\": is the name of your school\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1175\u001b[0m                 \u001b[0;34m\"raw_input was called, but this frontend does not support input requests.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1176\u001b[0m             )\n\u001b[0;32m-> 1177\u001b[0;31m         return self._input_request(\n\u001b[0m\u001b[1;32m   1178\u001b[0m             \u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprompt\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1179\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"shell\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m   1217\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1218\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1219\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Interrupted by user\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1220\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1221\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlog\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwarning\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Invalid Message:\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mexc_info\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: Interrupted by user"
+          ]
+        }
+      ],
+      "source": [
+        "school = input(\"Enter the name of your school: \")\n",
+        "\n",
+        "if school == \"OAU\":\n",
+        "    print(school, \": is the name of your school\")\n",
+        "else:\n",
+        "    print(\"i'm not aware of the name of your school\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = int(input(\"enter your age:  \"))\n",
+        "if age <= 30:\n",
+        "  print(\"you are needed\")\n",
+        "elif age ==31:\n",
+        "  print(\"you don't belong here\")\n",
+        "else:\n",
+        "  print(\"you can check in later \")"
+      ],
+      "metadata": {
+        "id": "u2UjLhUN_Ki4"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "original_number = 20\n",
+        "\n",
+        "guess = int(input(\"Guess a number: \"))\n",
+        "\n",
+        "if guess < original_number:\n",
+        "    print(\"Your guess is less than the original number\")\n",
+        "elif guess > original_number:\n",
+        "    print(\"Your guess is greater than the original number\")\n",
+        "elif guess == original_number:\n",
+        "    print(\"You guess right\")\n",
+        "else:\n",
+        "    print(\"ohhh sorry, you really tried but try again\")"
+      ],
+      "metadata": {
+        "id": "8fQzPXYjD0nD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "colour = input(\"Enter any traffic light colour of your choice: \")\n",
+        "\n",
+        "if colour == 'yellow':\n",
+        "    print(\"The vehicle should get set\")\n",
+        "elif colour == 'green':\n",
+        "    print(\"The vehicle should move\")\n",
+        "elif colour == 'red':\n",
+        "    print(\"The vehicle should stop\")\n",
+        "else:\n",
+        "    print(\"I'm not familiar with the colour you gave\")"
+      ],
+      "metadata": {
+        "id": "C0KX4t7sETbB"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "location = ['shelf', 'table', 'cuboard', 'bed', 'wardrobe']\n",
+        "\n",
+        "car_key = input(\"Enter the location of your car key: \")\n",
+        "\n",
+        "for i in location:\n",
+        "    if i == car_key:\n",
+        "        print(\"The key was found in \", i)\n",
+        "        break\n",
+        "else:\n",
+        "    print(\"The key was not found in \", i, \"try checking else where\")"
+      ],
+      "metadata": {
+        "id": "yPqe0lP5I1dR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "student = [\"dayo\", \"wale\", \"jimi\",\"tope\", \"mariam\"]\n",
+        "name = input(\"what is your name : \")\n",
+        "for i in student:\n",
+        "  if i == name:\n",
+        "    print(\"you are in the list\")\n",
+        "    break\n",
+        "else:\n",
+        "  print(\"you are not in the list\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "6MYitUFSI2eo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "secret_num = 23 # Changed to a single integer\n",
+        "\n",
+        "guess = int(input(\"Enter any number: \"))\n",
+        "\n",
+        "while secret_num != guess:\n",
+        "    if guess < secret_num:\n",
+        "        print(\"Too low\")\n",
+        "        guess = int(input(\"Enter number again: \"))\n",
+        "    elif guess > secret_num:\n",
+        "        print(\"Too high!\")\n",
+        "        guess = int(input(\"Enter number again: \"))\n",
+        "print(\"you guessed it right!!\")"
+      ],
+      "metadata": {
+        "id": "q998Je-6LAjy"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "Uz1HaGY-ipsV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "heart_rates = np.array([72, 68, 80, 95, 77])\n",
+        "print(heart_rates)\n",
+        "print(type(heart_rates))"
+      ],
+      "metadata": {
+        "id": "pcdUsjPQiwAr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(heart_rates[1:4])"
+      ],
+      "metadata": {
+        "id": "IFUAD6nvmrRl"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "vitals = np.array([\n",
+        "    [120, 80, 72],\n",
+        "    [140, 90, 88],\n",
+        "    [110, 70, 65]\n",
+        "])\n",
+        "print(vitals)\n",
+        "print(vitals.shape)"
+      ],
+      "metadata": {
+        "id": "cXGD-1aHjYCx"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(vitals[0, 0])"
+      ],
+      "metadata": {
+        "id": "bgqSbxjqnNe-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "print(vitals[0:3, 0:2] )"
+      ],
+      "metadata": {
+        "id": "VzIujVUyniJn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "goat = np.array([[12,34],[45,78]])\n",
+        "print(goat)"
+      ],
+      "metadata": {
+        "id": "Lo1rp4MJjrJR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(type(goat))"
+      ],
+      "metadata": {
+        "id": "26rsXfOhkCaQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(goat.shape)"
+      ],
+      "metadata": {
+        "id": "gu1fqRyzkQ5g"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "flat = np.arange(12)"
+      ],
+      "metadata": {
+        "id": "F1_G_GR0lnoh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Ntg7sdOnqHXe"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "table = flat.reshape(4, 3)\n",
+        "print(table)"
+      ],
+      "metadata": {
+        "id": "Ymx7Ku7cqKk-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "bp_systolic = np.array([120, 140, 110, 160, 95])\n",
+        "high_bp_mask = bp_systolic > 130\n",
+        "print(high_bp_mask)"
+      ],
+      "metadata": {
+        "id": "7Xfw9UjTqUQG"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "bp_systolic[(bp_systolic >= 130) | (bp_systolic <= 150)]"
+      ],
+      "metadata": {
+        "id": "i0Z8mOaxrjM_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.random.randint(1, 7)"
+      ],
+      "metadata": {
+        "id": "gx9u3IhYrsWG"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.random.rand(2, 7)"
+      ],
+      "metadata": {
+        "id": "vAYv_-XIswJr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ages = np.random.randint(18, 90, size=10)\n",
+        "print(ages)\n"
+      ],
+      "metadata": {
+        "id": "WOJcPplutajO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.random.seed(1)\n",
+        "n_patients = 8\n",
+        "\n",
+        "systolic_bp = np.random.randint(100, 160, size=n_patients)\n",
+        "heart_rate  = np.random.randint(60, 100, size=n_patients)\n",
+        "temperature = 36.0 + np.random.rand(n_patients) * 3.5   # 36.0 - 39.5 range\n",
+        "\n",
+        "print('Systolic BP:', systolic_bp)\n",
+        "print('Heart Rate :', heart_rate)\n",
+        "print('Temperature:', np.round(temperature, 1))\n",
+        "\n",
+        "print('Average systolic BP:', np.mean(systolic_bp))\n",
+        "print('Patients with BP > 140:', systolic_bp[systolic_bp > 140])\n"
+      ],
+      "metadata": {
+        "id": "tZVpXkdRttUN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "glucose = pd.Series([95,110, 88, 220],\n",
+        "                    index=['day1', 'day2', 'day3', 'day4'],\n",
+        "                    name = \"glucose_mg_day\")\n",
+        "print(glucose)"
+      ],
+      "metadata": {
+        "id": "vH7Im31lvPJN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(glucose['day3'])"
+      ],
+      "metadata": {
+        "id": "v04fvpA3W_AE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pd.DataFrame({\"BP\":[120,140,110],\n",
+        "              \"Dia\":[\"Hypertension\", \"Hypertension\", \"Normal\"]})\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "IKZWZZywXOGz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "hospital_record = {\n",
+        "    'Patient_ID': ['P01','P02','P03','P04','P05'],\n",
+        "    'Age':        [34, 55, 42, 61, 29],\n",
+        "    'Systolic_BP':[120, 145, 110, 160, 108],\n",
+        "    'Glucose':    [95, 130, 88, 210, 102],\n",
+        "    'Diagnosis':  ['Normal','Hypertension','Normal','Diabetes','Normal']\n",
+        "}\n",
+        "df = pd.DataFrame(hospital_record)\n",
+        "print(df)\n"
+      ],
+      "metadata": {
+        "id": "Ww9cwuQqZlUx"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house = pd.read_csv(\"/content/sample_data/california_housing_train.csv\")\n",
+        "print(house)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 236
+        },
+        "id": "xV8Ga6EMafyj",
+        "outputId": "3a529f51-4513-4300-efc0-891b53e17602"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'pd' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3573/1628743858.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mhouse\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"/content/sample_data/california_housing_train.csv\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mhouse\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'pd' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house.info()"
+      ],
+      "metadata": {
+        "id": "g8PFyyOwcl7D"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house.head(10)"
+      ],
+      "metadata": {
+        "id": "ItazDsbJcqBr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house.shape"
+      ],
+      "metadata": {
+        "id": "GaC87g0fdPRL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house.describe()"
+      ],
+      "metadata": {
+        "id": "PEXMeHbmdoGY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house.isnull().sum()"
+      ],
+      "metadata": {
+        "id": "eCJtMeZzeGzo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "house['latitude'].value_counts()"
+      ],
+      "metadata": {
+        "id": "JP4RHBwAfK0P"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import files\n",
+        "\n",
+        "uploaded = files.upload()"
+      ],
+      "metadata": {
+        "id": "nLpZDLXbfM-w",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 73
+        },
+        "outputId": "35e984db-0e75-4231-8401-5998d34c6303"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.HTML object>"
+            ],
+            "text/html": [
+              "\n",
+              "     <input type=\"file\" id=\"files-0cdf0661-d207-4f91-afea-11d70362a150\" name=\"files[]\" multiple disabled\n",
+              "        style=\"border:none\" />\n",
+              "     <output id=\"result-0cdf0661-d207-4f91-afea-11d70362a150\">\n",
+              "      Upload widget is only available when the cell has been executed in the\n",
+              "      current browser session. Please rerun this cell to enable.\n",
+              "      </output>\n",
+              "      <script>// Copyright 2017 Google LLC\n",
+              "//\n",
+              "// Licensed under the Apache License, Version 2.0 (the \"License\");\n",
+              "// you may not use this file except in compliance with the License.\n",
+              "// You may obtain a copy of the License at\n",
+              "//\n",
+              "//      http://www.apache.org/licenses/LICENSE-2.0\n",
+              "//\n",
+              "// Unless required by applicable law or agreed to in writing, software\n",
+              "// distributed under the License is distributed on an \"AS IS\" BASIS,\n",
+              "// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n",
+              "// See the License for the specific language governing permissions and\n",
+              "// limitations under the License.\n",
+              "\n",
+              "/**\n",
+              " * @fileoverview Helpers for google.colab Python module.\n",
+              " */\n",
+              "(function(scope) {\n",
+              "function span(text, styleAttributes = {}) {\n",
+              "  const element = document.createElement('span');\n",
+              "  element.textContent = text;\n",
+              "  for (const key of Object.keys(styleAttributes)) {\n",
+              "    element.style[key] = styleAttributes[key];\n",
+              "  }\n",
+              "  return element;\n",
+              "}\n",
+              "\n",
+              "// Max number of bytes which will be uploaded at a time.\n",
+              "const MAX_PAYLOAD_SIZE = 100 * 1024;\n",
+              "\n",
+              "function _uploadFiles(inputId, outputId) {\n",
+              "  const steps = uploadFilesStep(inputId, outputId);\n",
+              "  const outputElement = document.getElementById(outputId);\n",
+              "  // Cache steps on the outputElement to make it available for the next call\n",
+              "  // to uploadFilesContinue from Python.\n",
+              "  outputElement.steps = steps;\n",
+              "\n",
+              "  return _uploadFilesContinue(outputId);\n",
+              "}\n",
+              "\n",
+              "// This is roughly an async generator (not supported in the browser yet),\n",
+              "// where there are multiple asynchronous steps and the Python side is going\n",
+              "// to poll for completion of each step.\n",
+              "// This uses a Promise to block the python side on completion of each step,\n",
+              "// then passes the result of the previous step as the input to the next step.\n",
+              "function _uploadFilesContinue(outputId) {\n",
+              "  const outputElement = document.getElementById(outputId);\n",
+              "  const steps = outputElement.steps;\n",
+              "\n",
+              "  const next = steps.next(outputElement.lastPromiseValue);\n",
+              "  return Promise.resolve(next.value.promise).then((value) => {\n",
+              "    // Cache the last promise value to make it available to the next\n",
+              "    // step of the generator.\n",
+              "    outputElement.lastPromiseValue = value;\n",
+              "    return next.value.response;\n",
+              "  });\n",
+              "}\n",
+              "\n",
+              "/**\n",
+              " * Generator function which is called between each async step of the upload\n",
+              " * process.\n",
+              " * @param {string} inputId Element ID of the input file picker element.\n",
+              " * @param {string} outputId Element ID of the output display.\n",
+              " * @return {!Iterable<!Object>} Iterable of next steps.\n",
+              " */\n",
+              "function* uploadFilesStep(inputId, outputId) {\n",
+              "  const inputElement = document.getElementById(inputId);\n",
+              "  inputElement.disabled = false;\n",
+              "\n",
+              "  const outputElement = document.getElementById(outputId);\n",
+              "  outputElement.innerHTML = '';\n",
+              "\n",
+              "  const pickedPromise = new Promise((resolve) => {\n",
+              "    inputElement.addEventListener('change', (e) => {\n",
+              "      resolve(e.target.files);\n",
+              "    });\n",
+              "  });\n",
+              "\n",
+              "  const cancel = document.createElement('button');\n",
+              "  inputElement.parentElement.appendChild(cancel);\n",
+              "  cancel.textContent = 'Cancel upload';\n",
+              "  const cancelPromise = new Promise((resolve) => {\n",
+              "    cancel.onclick = () => {\n",
+              "      resolve(null);\n",
+              "    };\n",
+              "  });\n",
+              "\n",
+              "  // Wait for the user to pick the files.\n",
+              "  const files = yield {\n",
+              "    promise: Promise.race([pickedPromise, cancelPromise]),\n",
+              "    response: {\n",
+              "      action: 'starting',\n",
+              "    }\n",
+              "  };\n",
+              "\n",
+              "  cancel.remove();\n",
+              "\n",
+              "  // Disable the input element since further picks are not allowed.\n",
+              "  inputElement.disabled = true;\n",
+              "\n",
+              "  if (!files) {\n",
+              "    return {\n",
+              "      response: {\n",
+              "        action: 'complete',\n",
+              "      }\n",
+              "    };\n",
+              "  }\n",
+              "\n",
+              "  for (const file of files) {\n",
+              "    const li = document.createElement('li');\n",
+              "    li.append(span(file.name, {fontWeight: 'bold'}));\n",
+              "    li.append(span(\n",
+              "        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +\n",
+              "        `last modified: ${\n",
+              "            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :\n",
+              "                                    'n/a'} - `));\n",
+              "    const percent = span('0% done');\n",
+              "    li.appendChild(percent);\n",
+              "\n",
+              "    outputElement.appendChild(li);\n",
+              "\n",
+              "    const fileDataPromise = new Promise((resolve) => {\n",
+              "      const reader = new FileReader();\n",
+              "      reader.onload = (e) => {\n",
+              "        resolve(e.target.result);\n",
+              "      };\n",
+              "      reader.readAsArrayBuffer(file);\n",
+              "    });\n",
+              "    // Wait for the data to be ready.\n",
+              "    let fileData = yield {\n",
+              "      promise: fileDataPromise,\n",
+              "      response: {\n",
+              "        action: 'continue',\n",
+              "      }\n",
+              "    };\n",
+              "\n",
+              "    // Use a chunked sending to avoid message size limits. See b/62115660.\n",
+              "    let position = 0;\n",
+              "    do {\n",
+              "      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);\n",
+              "      const chunk = new Uint8Array(fileData, position, length);\n",
+              "      position += length;\n",
+              "\n",
+              "      const base64 = btoa(String.fromCharCode.apply(null, chunk));\n",
+              "      yield {\n",
+              "        response: {\n",
+              "          action: 'append',\n",
+              "          file: file.name,\n",
+              "          data: base64,\n",
+              "        },\n",
+              "      };\n",
+              "\n",
+              "      let percentDone = fileData.byteLength === 0 ?\n",
+              "          100 :\n",
+              "          Math.round((position / fileData.byteLength) * 100);\n",
+              "      percent.textContent = `${percentDone}% done`;\n",
+              "\n",
+              "    } while (position < fileData.byteLength);\n",
+              "  }\n",
+              "\n",
+              "  // All done.\n",
+              "  yield {\n",
+              "    response: {\n",
+              "      action: 'complete',\n",
+              "    }\n",
+              "  };\n",
+              "}\n",
+              "\n",
+              "scope.google = scope.google || {};\n",
+              "scope.google.colab = scope.google.colab || {};\n",
+              "scope.google.colab._files = {\n",
+              "  _uploadFiles,\n",
+              "  _uploadFilesContinue,\n",
+              "};\n",
+              "})(self);\n",
+              "</script> "
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Saving clinical_patient_dataset.csv to clinical_patient_dataset.csv\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "df = pd.read_csv('clinical_patient_dataset.csv')"
+      ],
+      "metadata": {
+        "id": "lbdt71Tzp9AY"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.head()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 226
+        },
+        "id": "gxRC0zozqUA_",
+        "outputId": "c82ebcfb-e713-4ecc-85cd-f4f4ce6d0e43"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "  Patient_ID  Age  Gender           Ward Admission_Date  LOS_Days  \\\n",
+              "0     PT-001   65  Female     Cardiology     2024-01-05      13.0   \n",
+              "1     PT-002   22  Female     Cardiology     2024-01-07      20.0   \n",
+              "2     PT-003   43    Male  Endocrinology     2024-01-10       5.0   \n",
+              "3     PT-004   72    Male        General     2024-01-13      18.0   \n",
+              "4     PT-005   21  Female        General     2024-01-16      18.0   \n",
+              "\n",
+              "       Diagnosis  Systolic_BP  Diastolic_BP  Heart_Rate  Temperature_C  \\\n",
+              "0     Arrhythmia          160           105          70           38.1   \n",
+              "1  Heart Failure          130            83          72           36.4   \n",
+              "2        Obesity          117            74          69           36.5   \n",
+              "3         Normal          110            73          87           38.1   \n",
+              "4   Hypertension          139            77          93           37.1   \n",
+              "\n",
+              "   Glucose_mg_dL   BMI Smoking_Status Blood_Type  \n",
+              "0          126.0  23.9          Never         A+  \n",
+              "1          198.0  32.1          Never        NaN  \n",
+              "2          199.0  27.0          Never         O+  \n",
+              "3            NaN  40.9            NaN         A+  \n",
+              "4            NaN  21.3          Never         B+  "
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-a13e6b6f-d08b-4ac7-a9b5-4dbb5dab7a22\" class=\"colab-df-container\">\n",
+              "    <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Patient_ID</th>\n",
+              "      <th>Age</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Ward</th>\n",
+              "      <th>Admission_Date</th>\n",
+              "      <th>LOS_Days</th>\n",
+              "      <th>Diagnosis</th>\n",
+              "      <th>Systolic_BP</th>\n",
+              "      <th>Diastolic_BP</th>\n",
+              "      <th>Heart_Rate</th>\n",
+              "      <th>Temperature_C</th>\n",
+              "      <th>Glucose_mg_dL</th>\n",
+              "      <th>BMI</th>\n",
+              "      <th>Smoking_Status</th>\n",
+              "      <th>Blood_Type</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>PT-001</td>\n",
+              "      <td>65</td>\n",
+              "      <td>Female</td>\n",
+              "      <td>Cardiology</td>\n",
+              "      <td>2024-01-05</td>\n",
+              "      <td>13.0</td>\n",
+              "      <td>Arrhythmia</td>\n",
+              "      <td>160</td>\n",
+              "      <td>105</td>\n",
+              "      <td>70</td>\n",
+              "      <td>38.1</td>\n",
+              "      <td>126.0</td>\n",
+              "      <td>23.9</td>\n",
+              "      <td>Never</td>\n",
+              "      <td>A+</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>PT-002</td>\n",
+              "      <td>22</td>\n",
+              "      <td>Female</td>\n",
+              "      <td>Cardiology</td>\n",
+              "      <td>2024-01-07</td>\n",
+              "      <td>20.0</td>\n",
+              "      <td>Heart Failure</td>\n",
+              "      <td>130</td>\n",
+              "      <td>83</td>\n",
+              "      <td>72</td>\n",
+              "      <td>36.4</td>\n",
+              "      <td>198.0</td>\n",
+              "      <td>32.1</td>\n",
+              "      <td>Never</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>PT-003</td>\n",
+              "      <td>43</td>\n",
+              "      <td>Male</td>\n",
+              "      <td>Endocrinology</td>\n",
+              "      <td>2024-01-10</td>\n",
+              "      <td>5.0</td>\n",
+              "      <td>Obesity</td>\n",
+              "      <td>117</td>\n",
+              "      <td>74</td>\n",
+              "      <td>69</td>\n",
+              "      <td>36.5</td>\n",
+              "      <td>199.0</td>\n",
+              "      <td>27.0</td>\n",
+              "      <td>Never</td>\n",
+              "      <td>O+</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>PT-004</td>\n",
+              "      <td>72</td>\n",
+              "      <td>Male</td>\n",
+              "      <td>General</td>\n",
+              "      <td>2024-01-13</td>\n",
+              "      <td>18.0</td>\n",
+              "      <td>Normal</td>\n",
+              "      <td>110</td>\n",
+              "      <td>73</td>\n",
+              "      <td>87</td>\n",
+              "      <td>38.1</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>40.9</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>A+</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>PT-005</td>\n",
+              "      <td>21</td>\n",
+              "      <td>Female</td>\n",
+              "      <td>General</td>\n",
+              "      <td>2024-01-16</td>\n",
+              "      <td>18.0</td>\n",
+              "      <td>Hypertension</td>\n",
+              "      <td>139</td>\n",
+              "      <td>77</td>\n",
+              "      <td>93</td>\n",
+              "      <td>37.1</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>21.3</td>\n",
+              "      <td>Never</td>\n",
+              "      <td>B+</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "    <div class=\"colab-df-buttons\">\n",
+              "\n",
+              "  <div class=\"colab-df-container\">\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-a13e6b6f-d08b-4ac7-a9b5-4dbb5dab7a22')\"\n",
+              "            title=\"Convert this dataframe to an interactive table.\"\n",
+              "            style=\"display:none;\">\n",
+              "\n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" viewBox=\"0 -960 960 960\">\n",
+              "    <path d=\"M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z\"/>\n",
+              "  </svg>\n",
+              "    </button>\n",
+              "\n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-buttons div {\n",
+              "      margin-bottom: 4px;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "    <script>\n",
+              "      const buttonEl =\n",
+              "        document.querySelector('#df-a13e6b6f-d08b-4ac7-a9b5-4dbb5dab7a22 button.colab-df-convert');\n",
+              "      buttonEl.style.display =\n",
+              "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "      async function convertToInteractive(key) {\n",
+              "        const element = document.querySelector('#df-a13e6b6f-d08b-4ac7-a9b5-4dbb5dab7a22');\n",
+              "        const dataTable =\n",
+              "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                    [key], {});\n",
+              "        if (!dataTable) return;\n",
+              "\n",
+              "        const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "          '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "          + ' to learn more about interactive tables.';\n",
+              "        element.innerHTML = '';\n",
+              "        dataTable['output_type'] = 'display_data';\n",
+              "        await google.colab.output.renderOutput(dataTable, element);\n",
+              "        const docLink = document.createElement('div');\n",
+              "        docLink.innerHTML = docLinkHtml;\n",
+              "        element.appendChild(docLink);\n",
+              "      }\n",
+              "    </script>\n",
+              "  </div>\n",
+              "\n",
+              "\n",
+              "    </div>\n",
+              "  </div>\n"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "dataframe",
+              "variable_name": "df",
+              "summary": "{\n  \"name\": \"df\",\n  \"rows\": 120,\n  \"fields\": [\n    {\n      \"column\": \"Patient_ID\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 120,\n        \"samples\": [\n          \"PT-045\",\n          \"PT-048\",\n          \"PT-005\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Age\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 19,\n        \"min\": 18,\n        \"max\": 81,\n        \"num_unique_values\": 54,\n        \"samples\": [\n          62,\n          20,\n          35\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Gender\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 2,\n        \"samples\": [\n          \"Male\",\n          \"Female\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Ward\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 4,\n        \"samples\": [\n          \"Endocrinology\",\n          \"Emergency\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Admission_Date\",\n      \"properties\": {\n        \"dtype\": \"object\",\n        \"num_unique_values\": 120,\n        \"samples\": [\n          \"2024-05-13\",\n          \"2024-05-22\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"LOS_Days\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 6.0105042982299315,\n        \"min\": 1.0,\n        \"max\": 20.0,\n        \"num_unique_values\": 20,\n        \"samples\": [\n          13.0,\n          7.0\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Diagnosis\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 15,\n        \"samples\": [\n          \"Infection\",\n          \"Asthma Attack\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Systolic_BP\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 20,\n        \"min\": 92,\n        \"max\": 179,\n        \"num_unique_values\": 61,\n        \"samples\": [\n          160,\n          150\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Diastolic_BP\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 13,\n        \"min\": 50,\n        \"max\": 107,\n        \"num_unique_values\": 47,\n        \"samples\": [\n          91,\n          96\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Heart_Rate\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 15,\n        \"min\": 58,\n        \"max\": 129,\n        \"num_unique_values\": 48,\n        \"samples\": [\n          62,\n          123\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Temperature_C\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 1.0545941934451173,\n        \"min\": 36.1,\n        \"max\": 39.8,\n        \"num_unique_values\": 35,\n        \"samples\": [\n          39.0,\n          38.9\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Glucose_mg_dL\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 55.26967944820448,\n        \"min\": 72.0,\n        \"max\": 303.0,\n        \"num_unique_values\": 75,\n        \"samples\": [\n          83.0,\n          187.0\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"BMI\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 7.148080229572106,\n        \"min\": 17.5,\n        \"max\": 41.6,\n        \"num_unique_values\": 93,\n        \"samples\": [\n          25.4,\n          31.5\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Smoking_Status\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 3,\n        \"samples\": [\n          \"Never\",\n          \"Current\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Blood_Type\",\n      \"properties\": {\n        \"dtype\": \"category\",\n        \"num_unique_values\": 8,\n        \"samples\": [\n          \"O+\",\n          \"AB-\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+            }
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.info()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PUsFjtmxqYUw",
+        "outputId": "e49a5c00-dfe7-46bc-c8d4-f657cda13596"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'pandas.core.frame.DataFrame'>\n",
+            "RangeIndex: 120 entries, 0 to 119\n",
+            "Data columns (total 15 columns):\n",
+            " #   Column          Non-Null Count  Dtype  \n",
+            "---  ------          --------------  -----  \n",
+            " 0   Patient_ID      120 non-null    object \n",
+            " 1   Age             120 non-null    int64  \n",
+            " 2   Gender          120 non-null    object \n",
+            " 3   Ward            120 non-null    object \n",
+            " 4   Admission_Date  120 non-null    object \n",
+            " 5   LOS_Days        116 non-null    float64\n",
+            " 6   Diagnosis       120 non-null    object \n",
+            " 7   Systolic_BP     120 non-null    int64  \n",
+            " 8   Diastolic_BP    120 non-null    int64  \n",
+            " 9   Heart_Rate      120 non-null    int64  \n",
+            " 10  Temperature_C   106 non-null    float64\n",
+            " 11  Glucose_mg_dL   106 non-null    float64\n",
+            " 12  BMI             109 non-null    float64\n",
+            " 13  Smoking_Status  111 non-null    object \n",
+            " 14  Blood_Type      109 non-null    object \n",
+            "dtypes: float64(4), int64(4), object(7)\n",
+            "memory usage: 14.2+ KB\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(df['Admission_Date'])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ep-bFAHcsb1A",
+        "outputId": "7c94acdb-bd41-48f7-b069-dc2a54b4dd5a"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0      2024-01-05\n",
+            "1      2024-01-07\n",
+            "2      2024-01-10\n",
+            "3      2024-01-13\n",
+            "4      2024-01-16\n",
+            "          ...    \n",
+            "115    2024-12-08\n",
+            "116    2024-12-11\n",
+            "117    2024-12-14\n",
+            "118    2024-12-17\n",
+            "119    2024-12-20\n",
+            "Name: Admission_Date, Length: 120, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import datetime\n",
+        "df['Admission_Date'] = pd.to_datetime(df['Admission_Date'])"
+      ],
+      "metadata": {
+        "id": "T7KZDiD4tYGs"
+      },
+      "execution_count": 6,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(df['Admission_Date'])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5V7EH_-9ubrq",
+        "outputId": "b90ed238-e2ba-4a77-868b-398e5363a7dc"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0     2024-01-05\n",
+            "1     2024-01-07\n",
+            "2     2024-01-10\n",
+            "3     2024-01-13\n",
+            "4     2024-01-16\n",
+            "         ...    \n",
+            "115   2024-12-08\n",
+            "116   2024-12-11\n",
+            "117   2024-12-14\n",
+            "118   2024-12-17\n",
+            "119   2024-12-20\n",
+            "Name: Admission_Date, Length: 120, dtype: datetime64[ns]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.isnull().sum()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 554
+        },
+        "id": "iCzCIlnlu1_Z",
+        "outputId": "e585586e-7279-4610-bb1f-83e8dd761683"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Patient_ID         0\n",
+              "Age                0\n",
+              "Gender             0\n",
+              "Ward               0\n",
+              "Admission_Date     0\n",
+              "LOS_Days           4\n",
+              "Diagnosis          0\n",
+              "Systolic_BP        0\n",
+              "Diastolic_BP       0\n",
+              "Heart_Rate         0\n",
+              "Temperature_C     14\n",
+              "Glucose_mg_dL     14\n",
+              "BMI               11\n",
+              "Smoking_Status     9\n",
+              "Blood_Type        11\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Patient_ID</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Age</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Gender</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Ward</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Admission_Date</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>LOS_Days</th>\n",
+              "      <td>4</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Diagnosis</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Systolic_BP</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Diastolic_BP</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Heart_Rate</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Temperature_C</th>\n",
+              "      <td>14</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Glucose_mg_dL</th>\n",
+              "      <td>14</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>BMI</th>\n",
+              "      <td>11</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Smoking_Status</th>\n",
+              "      <td>9</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Blood_Type</th>\n",
+              "      <td>11</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Glucose_mg_dL'].mean()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DwvH_b5Gv7KV",
+        "outputId": "14c657df-cd1e-4e51-b657-5406a9916b1b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "np.float64(154.7924528301887)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Glucose_mg_dL'] = df['Glucose_mg_dL'].fillna(df['Glucose_mg_dL'].mean())"
+      ],
+      "metadata": {
+        "id": "f2m7PNXGwFHE"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.isnull().sum()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 554
+        },
+        "id": "tYAv_ytow0VH",
+        "outputId": "8b2748d8-69b8-4926-c8b5-8e0358eb429e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Patient_ID         0\n",
+              "Age                0\n",
+              "Gender             0\n",
+              "Ward               0\n",
+              "Admission_Date     0\n",
+              "LOS_Days           4\n",
+              "Diagnosis          0\n",
+              "Systolic_BP        0\n",
+              "Diastolic_BP       0\n",
+              "Heart_Rate         0\n",
+              "Temperature_C     14\n",
+              "Glucose_mg_dL      0\n",
+              "BMI               11\n",
+              "Smoking_Status     9\n",
+              "Blood_Type        11\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Patient_ID</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Age</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Gender</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Ward</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Admission_Date</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>LOS_Days</th>\n",
+              "      <td>4</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Diagnosis</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Systolic_BP</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Diastolic_BP</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Heart_Rate</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Temperature_C</th>\n",
+              "      <td>14</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Glucose_mg_dL</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>BMI</th>\n",
+              "      <td>11</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Smoking_Status</th>\n",
+              "      <td>9</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Blood_Type</th>\n",
+              "      <td>11</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 20
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['BMI'].mean()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R7ZH2UMJx4L7",
+        "outputId": "a5c14966-3bf4-4a34-ae63-e183c9d4eefe"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "np.float64(29.593577981651375)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['BMI'] = df['BMI'].fillna(\n",
+        "    df.groupby('Ward')['BMI'].transform('mean')\n",
+        ")"
+      ],
+      "metadata": {
+        "id": "dwmEhI9HyPxR"
+      },
+      "execution_count": 11,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Smoking_Status'].fillna('Unknown', inplace=True)\n",
+        "df['Blood_Type'].fillna('Unknown', inplace=True)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LiTW9UnRzm1O",
+        "outputId": "4a6de46f-89c0-4ae9-a008-ee94b3c90d00"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/tmp/ipykernel_3573/962668250.py:1: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.\n",
+            "The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.\n",
+            "\n",
+            "For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.\n",
+            "\n",
+            "\n",
+            "  df['Smoking_Status'].fillna('Unknown', inplace=True)\n",
+            "/tmp/ipykernel_3573/962668250.py:2: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.\n",
+            "The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.\n",
+            "\n",
+            "For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.\n",
+            "\n",
+            "\n",
+            "  df['Blood_Type'].fillna('Unknown', inplace=True)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['LOS_Missing'] =df['LOS_Days'].isna()\n",
+        "df_clean = df.dropna(subset=['LOS_Days'])"
+      ],
+      "metadata": {
+        "id": "0DG-IIWu1e_u"
+      },
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#•\tSelect and print: (a) only the Age, Ward, and Diagnosis columns, (b) the first 10 rows using .iloc, (c) the row for Patient PT-045 using .loc."
+      ],
+      "metadata": {
+        "id": "Yl3pKh4nM9-2"
+      },
+      "execution_count": 13,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(df_clean[['Age', 'Ward', 'Diagnosis']].head())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cA7MDQ5XNnK6",
+        "outputId": "a3ba129b-998f-4b35-8e8f-14d14c0b2dd9"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Age           Ward      Diagnosis\n",
+            "0   65     Cardiology     Arrhythmia\n",
+            "1   22     Cardiology  Heart Failure\n",
+            "2   43  Endocrinology        Obesity\n",
+            "3   72        General         Normal\n",
+            "4   21        General   Hypertension\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(df_clean.iloc[:10])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AnLczp68PiQf",
+        "outputId": "37084d58-b0e0-4dbb-e208-b3f0100d0087"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Patient_ID  Age  Gender           Ward Admission_Date  LOS_Days  \\\n",
+            "0     PT-001   65  Female     Cardiology     2024-01-05      13.0   \n",
+            "1     PT-002   22  Female     Cardiology     2024-01-07      20.0   \n",
+            "2     PT-003   43    Male  Endocrinology     2024-01-10       5.0   \n",
+            "3     PT-004   72    Male        General     2024-01-13      18.0   \n",
+            "4     PT-005   21  Female        General     2024-01-16      18.0   \n",
+            "5     PT-006   37    Male     Cardiology     2024-01-19       2.0   \n",
+            "6     PT-007   41  Female     Cardiology     2024-01-22       8.0   \n",
+            "7     PT-008   57  Female        General     2024-01-25       3.0   \n",
+            "8     PT-009   46  Female      Emergency     2024-01-28       1.0   \n",
+            "9     PT-010   75    Male  Endocrinology     2024-01-31      20.0   \n",
+            "\n",
+            "        Diagnosis  Systolic_BP  Diastolic_BP  Heart_Rate  Temperature_C  \\\n",
+            "0      Arrhythmia          160           105          70           38.1   \n",
+            "1   Heart Failure          130            83          72           36.4   \n",
+            "2         Obesity          117            74          69           36.5   \n",
+            "3          Normal          110            73          87           38.1   \n",
+            "4    Hypertension          139            77          93           37.1   \n",
+            "5      Arrhythmia          150            85          76           38.3   \n",
+            "6      Arrhythmia          147            98          74            NaN   \n",
+            "7          Normal          102            68         103           38.4   \n",
+            "8    Hypertension          140            78          86           38.5   \n",
+            "9  Hypothyroidism          122            79          83           36.9   \n",
+            "\n",
+            "   Glucose_mg_dL   BMI Smoking_Status Blood_Type  LOS_Missing  \n",
+            "0     126.000000  23.9          Never         A+        False  \n",
+            "1     198.000000  32.1          Never        NaN        False  \n",
+            "2     199.000000  27.0          Never         O+        False  \n",
+            "3     154.792453  40.9            NaN         A+        False  \n",
+            "4     154.792453  21.3          Never         B+        False  \n",
+            "5      76.000000  23.1          Never         O+        False  \n",
+            "6      83.000000  37.8        Current        NaN        False  \n",
+            "7     154.792453  22.5          Never         O+        False  \n",
+            "8     122.000000  40.1          Never        NaN        False  \n",
+            "9     136.000000  28.3          Never         A-        False  \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pt045 = df_clean.loc[df_clean['Patient_ID'] == 'PT-045']\n",
+        "print(pt045)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WaLY5L_kP18Q",
+        "outputId": "313b9d3e-0245-4144-dc80-2f2e1c8b1cbd"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Patient_ID  Age  Gender       Ward Admission_Date  LOS_Days Diagnosis  \\\n",
+            "44     PT-045   74  Female  Emergency     2024-05-13       7.0    Sepsis   \n",
+            "\n",
+            "    Systolic_BP  Diastolic_BP  Heart_Rate  Temperature_C  Glucose_mg_dL   BMI  \\\n",
+            "44          179           105         115            NaN          124.0  24.8   \n",
+            "\n",
+            "   Smoking_Status Blood_Type  LOS_Missing  \n",
+            "44        Current         O+        False  \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "smokers = df_clean[df_clean['Smoking_Status'] == 'Current']\n",
+        "print(len(smokers))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vM1b7ZXhQfF0",
+        "outputId": "0c0d7edd-e0b8-467f-d558-f86db876c497"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "22\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tUsing Boolean indexing, create separate DataFrames for: (a) patients with Systolic_BP > 140 (hypertensive range), (b) patients aged 60 or older, (c) Emergency ward patients with Heart_Rate > 100 (tachycardia flag)."
+      ],
+      "metadata": {
+        "id": "rjGcsPTuRvMO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#hypertensive\n",
+        "high_bp = df_clean[df_clean['Systolic_BP'] > 140]\n",
+        "print(f\"High BP Patients: {len(high_bp)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YgtmksgYRudX",
+        "outputId": "a2d812ae-8e8f-4fc4-f48e-58a4a1626471"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "High BP Patients: 54\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "elderly= df_clean[df_clean['Age'] >= 60]\n",
+        "print(f\"Elderly Patients: {len(elderly)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "raC2R68TSEjv",
+        "outputId": "47eb1afe-66b4-4fd7-c74c-2528fbb291d5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Elderly Patients: 37\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "high_heart = df_clean[\n",
+        "    (df_clean['Ward'] == 'Emergency') &\n",
+        " (df_clean['Heart_Rate'] > 100)]\n",
+        "print(high_heart[['Patient_ID','Heart_Rate', 'Diagnosis']])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oePTtlosTRzr",
+        "outputId": "ad66588a-3756-4071-b9e4-b21d1eedc461"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Patient_ID  Heart_Rate Diagnosis\n",
+            "44     PT-045         115    Sepsis\n",
+            "60     PT-061         126    Sepsis\n",
+            "80     PT-081         123    Sepsis\n",
+            "88     PT-089         129    Trauma\n",
+            "93     PT-094         120    Trauma\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tFind all female patients over 55 in the Cardiology ward with a Systolic_BP above 135. How many patients meet all four conditions?"
+      ],
+      "metadata": {
+        "id": "tjGmy3XaUzNC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "joined = df_clean[(df_clean['Gender'] == 'Female') &\n",
+        "                  (df_clean['Age'] > 55) &\n",
+        "                  (df_clean['Ward'] == 'Cardiology') &\n",
+        "                  (df_clean['Systolic_BP'] > 135)]\n",
+        "print(len(joined))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NFcvyz9tT7y6",
+        "outputId": "fdfe87de-8cd4-4707-f2ac-63cc2245e3af"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "v2kfA7iUVwdB"
+      },
+      "execution_count": 24,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tAdd a new column 'BP_Category' using np.where() with the following logic: Systolic_BP < 120 → 'Normal', 120–139 → 'Elevated', ≥ 140 → 'Hypertensive'. (Hint: use np.select() for three conditions.)"
+      ],
+      "metadata": {
+        "id": "Ru6R5q5xV564"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "conditions = [\n",
+        "    df_clean['Systolic_BP'] < 120,\n",
+        "    (df_clean['Systolic_BP'] >= 120) & (df_clean['Systolic_BP'] <= 139),\n",
+        "    df_clean['Systolic_BP'] >= 140\n",
+        "]\n",
+        "choices = ['Normal', 'Elevated', 'Hypertensive']\n",
+        "df_clean['BP_Category'] = np.select(conditions, choices, default='Unknown')\n",
+        "print(df_clean[['Patient_ID', 'Systolic_BP', 'BP_Category']].head())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0tSl2y8gV1yV",
+        "outputId": "4df937f7-b7e1-4553-ce3d-b94fc8e6b1e6"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Patient_ID  Systolic_BP   BP_Category\n",
+            "0     PT-001          160  Hypertensive\n",
+            "1     PT-002          130      Elevated\n",
+            "2     PT-003          117        Normal\n",
+            "3     PT-004          110        Normal\n",
+            "4     PT-005          139      Elevated\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/tmp/ipykernel_1586/1160143157.py:7: SettingWithCopyWarning: \n",
+            "A value is trying to be set on a copy of a slice from a DataFrame.\n",
+            "Try using .loc[row_indexer,col_indexer] = value instead\n",
+            "\n",
+            "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+            "  df_clean['BP_Category'] = np.select(conditions, choices, default='Unknown')\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tFor each Ward, calculate: mean Systolic_BP, mean Glucose_mg_dL, mean Age, and patient count. Round to 1 decimal. Which ward has the highest average glucose?"
+      ],
+      "metadata": {
+        "id": "hSIjZvY-qVCQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ward_summ = df_clean.groupby('Ward').agg(\n",
+        "    patient_count = ('Patient_ID', 'count'),\n",
+        "    mean_systolic_bp = ('Systolic_BP', 'mean'),\n",
+        "    mean_glucose = ('Glucose_mg_dL', 'mean'),\n",
+        "    mean_age = ('Age', 'mean')\n",
+        ").round(1)\n",
+        "print(ward_summ)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sr3xDK2rqWfk",
+        "outputId": "bd72e12b-3741-4a51-e973-bc685abbb832"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "               patient_count  mean_systolic_bp  mean_glucose  mean_age\n",
+            "Ward                                                                  \n",
+            "Cardiology                30             151.9         131.6      46.4\n",
+            "Emergency                 16             139.0         136.7      53.9\n",
+            "Endocrinology             31             131.1         198.8      49.2\n",
+            "General                   39             124.4         147.2      45.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tUsing value_counts(), find the 5 most common diagnoses. Then calculate what percentage of patients each diagnosis represents. Round to 2 decimal places."
+      ],
+      "metadata": {
+        "id": "L-7BrPpvsLgC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "diag_count = df_clean['Diagnosis'].value_counts()\n",
+        "diag_percent = (diag_count / len(df_clean) * 100).round(2)\n",
+        "diag_table = pd.DataFrame({'Count': diag_count, 'Percentage': diag_percent})\n",
+        "print(diag_table.head(5))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-LFGnFQAsK38",
+        "outputId": "ce24c2d1-ae88-42e7-cc6d-434f8f46d7b4"
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "                Count  Percentage\n",
+            "Diagnosis                        \n",
+            "Obesity            18       15.52\n",
+            "Hypertension       16       13.79\n",
+            "Hypothyroidism     12       10.34\n",
+            "Normal             11        9.48\n",
+            "Anemia              9        7.76\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tCompare mean Systolic_BP, mean Heart_Rate, and mean BMI between Male and Female patients using groupby. Are there notable differences?"
+      ],
+      "metadata": {
+        "id": "hs_h2x0ZuOTR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "gender_compare = df_clean.groupby('Gender')[['Systolic_BP', 'Heart_Rate', 'BMI']].mean().round(2)\n",
+        "print(gender_compare)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TH7h5u-SuPMf",
+        "outputId": "17e8e170-082a-44dd-c1df-99fd8c377b6b"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "        Systolic_BP  Heart_Rate    BMI\n",
+            "Gender                                \n",
+            "Female       134.19       81.00  30.30\n",
+            "Male         136.43       80.95  28.56\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tCalculate mean Systolic_BP grouped by Smoking_Status. Include 'Unknown' in the results. Do current smokers show a higher average BP than never-smokers? (Do not over-interpret — this is observational.)"
+      ],
+      "metadata": {
+        "id": "B32bxc8ovP8T"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "smokers = df_clean['Smoking_Status']\n",
+        "print(smokers.unique())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oJwHOSv6vmI_",
+        "outputId": "e1f3fde7-d15f-451b-8f2b-acadba331de0"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['Never' nan 'Current' 'Former']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "smoking_bp = df_clean.groupby('Smoking_Status')['Systolic_BP'].mean().round(2)\n",
+        "print(smoking_bp)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O1eKRYw2vN64",
+        "outputId": "fe9ffd95-143a-4df1-8139-3a71c50991a5"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Smoking_Status\n",
+            "Current    134.27\n",
+            "Former     133.96\n",
+            "Never      136.83\n",
+            "Name: Systolic_BP, dtype: float64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tBuild a crosstab of Ward vs BP_Category (from Objective 2.4). Normalise by row (normalize='index') so values show proportions. Which ward has the highest proportion of hypertensive patients?"
+      ],
+      "metadata": {
+        "id": "fjq3UhwqwPRn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "crosstab = pd.crosstab(df_clean['Ward'], df_clean['BP_Category'], normalize='index')*100\n",
+        "print(crosstab)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kuooY8rpwZot",
+        "outputId": "1b696a8f-523a-413c-9735-cd1afcc7ed84"
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "BP_Category     Elevated  Hypertensive     Normal\n",
+            "Ward                                             \n",
+            "Cardiology     16.666667     83.333333   0.000000\n",
+            "Emergency       6.250000     62.500000  31.250000\n",
+            "Endocrinology  38.709677     38.709677  22.580645\n",
+            "General        25.641026     23.076923  51.282051\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "•\tWrite a single clean, commented function called clean_dataset(df) that performs ALL cleaning steps from Tier 1 (datetime conversion, fill missing Glucose with mean, fill BMI by ward group, replace categorical missing with 'Unknown', flag LOS missing). Return the cleaned DataFrame."
+      ],
+      "metadata": {
+        "id": "fQpv14b9xb0A"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def clean_dataset(df):\n",
+        "    \"\"\"\n",
+        "    Perform all Tier 1 cleaning steps on the raw clinical dataset.\n",
+        "    Returns a cleaned copy — does NOT modify the input DataFrame.\n",
+        "    \"\"\"\n",
+        "    df = df.copy()  # always copy — never mutate the raw data\n",
+        "\n",
+        "    # 1. Convert date column\n",
+        "    df['Admission_Date'] = pd.to_datetime(df['Admission_Date'])\n",
+        "\n",
+        "    # 2. Fill Glucose with column mean\n",
+        "    df['Glucose_mg_dL'] = df['Glucose_mg_dL'].fillna(df['Glucose_mg_dL'].mean())\n",
+        "\n",
+        "    # 3. Fill BMI with ward-specific group mean\n",
+        "    ward_bmi = df.groupby('Ward')['BMI'].transform('mean')\n",
+        "    df['BMI'] = df['BMI'].fillna(ward_bmi)\n",
+        "\n",
+        "    # 4. Categorical missing → 'Unknown'\n",
+        "    df['Smoking_Status'] = df['Smoking_Status'].fillna('Unknown')\n",
+        "    df['Blood_Type']     = df['Blood_Type'].fillna('Unknown')\n",
+        "\n",
+        "    # 5. Flag and drop missing LOS\n",
+        "    df['LOS_Missing'] = df['LOS_Days'].isnull()\n",
+        "    df = df.dropna(subset=['LOS_Days']).reset_index(drop=True)\n",
+        "\n",
+        "    return df\n",
+        "\n",
+        "# Apply to raw data\n",
+        "df_raw   = pd.read_csv('clinical_patient_dataset.csv')\n",
+        "df_final = clean_dataset(df_raw)\n",
+        "print(df_final.shape)   # (116, 16)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_3kDmyUExc7o",
+        "outputId": "575f06f8-8a07-49dc-ce2a-465dcdbd2946"
+      },
+      "execution_count": 37,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(116, 16)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
